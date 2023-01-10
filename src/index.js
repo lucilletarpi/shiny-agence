@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Home from './pages/Home';
 import Survey from './pages/Survey';
 import Error from './components/Error';
-import { BrowserRouter , Route, Routes, } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Results from './pages/Results';
 import Freelances from './pages/Freelances';
@@ -12,9 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
-      
           <Routes>
-
               <Route 
                 path='/' element={<Home />}>
               </Route>
