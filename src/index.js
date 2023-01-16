@@ -16,6 +16,7 @@ ReactDOM.render(
     <ThemeProvider>
     <SurveyProvider>
       <Header />
+      
           <Routes>
               <Route 
                 path='/' element={<Home />}>

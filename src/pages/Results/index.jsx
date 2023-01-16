@@ -51,7 +51,12 @@ const LoaderWrapper = styled.div`
   display: flex;
   justify-content: center;
 `
-
+export function formatJobList(title, listLength, index) {
+  if (index === listLength - 1) {
+      return title
+  }
+  return `${title},`
+}
 function formatFetchParams(answers) {
   const answerNumbers = Object.keys(answers)
 
@@ -84,18 +89,18 @@ function Results() {
   ) : (
     <ResultsContainer theme={theme}>
       <ResultsTitle theme={theme}>
-        Les compétences dont vous avez besoin :
-        {resultsData &&
-          resultsData.map((result, index) => (
+    Les compétences dont vous avez besoin :
+    {resultsData &&
+        resultsData.map((result, index) => (
             <JobTitle
-              key={`result-title-${index}-${result.title}`}
-              theme={theme}
+                key={`result-title-${index}-${result.title}`}
+                theme={theme}
             >
-              {result.title}
-              {index === resultsData.length - 1 ? '' : ','}
+                {formatJobList(result.title, resultsData.length, index)}
             </JobTitle>
-          ))}
-      </ResultsTitle>
+
+    ))}
+</ResultsTitle>
       <StyledLink $isFullLink to="/freelances">
         Découvrez nos profils
       </StyledLink>
